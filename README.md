@@ -1,19 +1,30 @@
 # DSA-HW02-SparseMatrix
 
-## Overview
+## 📝 Overview
 
 A Node.js CLI tool for performing operations (addition, subtraction, multiplication) on sparse matrices stored in a simple text file format. Designed for educational use in Data Structures & Algorithms coursework.
 
-## Features
+## ✨ Features
 
-- Loads sparse matrices from custom text files
-- Efficient storage using JavaScript `Map`
-- Supports matrix addition, subtraction, and multiplication
-- Saves results to file in the same format
-- Command-line interface for interactive use
-- Robust error handling for file format and dimension mismatches
+- 📂 Loads sparse matrices from custom text files
+- ⚡ Efficient storage using JavaScript `Map`
+- ➕➖✖️ Supports matrix addition, subtraction, and multiplication
+- 💾 Saves results to file in the same format
+- 🖥️ Command-line interface for interactive use
+- 🛡️ Robust error handling for file format and dimension mismatches
 
-## Installation
+## 📦 Folder Structure
+
+```
+DSA-HW02-SparseMatrix/
+├── code/
+│   └── src/
+│       └── sparse_matrix.js    # Main CLI and sparse matrix logic
+├── README.md                   # Project documentation
+├── LICENSE                     # MIT License
+```
+
+## 🚀 Installation
 
 1. Clone this repository:
     ```bash
@@ -26,7 +37,7 @@ A Node.js CLI tool for performing operations (addition, subtraction, multiplicat
     npm install readline-sync
     ```
 
-## Usage
+## ⚙️ Usage
 
 Run the CLI with Node.js:
 
@@ -39,7 +50,7 @@ You will be prompted to:
 - Enter paths for the two input matrix files
 - Enter a path for the output file
 
-### Example Matrix File Format
+### 🗂️ Example Matrix File Format
 
 ```
 rows=3
@@ -51,7 +62,7 @@ cols=3
 - First two lines specify dimensions.
 - Each subsequent line: `(row, col, value)` (omit zeros).
 
-### Example Session
+### 🖥️ Example Session
 
 ```
 Sparse Matrix Operations
@@ -68,20 +79,26 @@ Result dimensions: 3x3
 Non-zero entries: 4
 ```
 
-## File Structure
-
-- `code/src/sparse_matrix.js` — Main CLI and sparse matrix logic
-
-## Notes
+## 📝 Notes
 
 - All three operations (add, subtract, multiply) are implemented.
 - Input files must match the specified format or errors will be thrown.
 - For large matrices, further optimizations are possible but not required for coursework.
 
-## Testing
+## 🧪 Testing
 
 > No automated tests are included yet. For best results, test manually with a variety of input files, including edge cases (zero matrices, mismatched dimensions, empty files, etc.).
 
-## License
+## 👐 Contributing
 
-For educational use.
+Open source contributions are welcome! Feel free to fork the repository, create issues, or submit pull requests.
+
+## 📄 License
+
+This project is licensed under the MIT License.  
+See [LICENSE](./LICENSE) for details.
+
+---
+
+**MIT License**  
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the conditions stated in the LICENSE file.
