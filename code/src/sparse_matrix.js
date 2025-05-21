@@ -79,6 +79,26 @@ class SparseMatrix {
         return result;
     }
 
+        subtract(other) {
+        if (this.rows !== other.rows || this.cols !== other.cols) {
+            throw new Error(`Dimension mismatch: Cannot subtract ${this.rows}x${this.cols} and ${other.rows}x${other.cols}`);
+        }
+
+        const result = new SparseMatrix();
+        result.rows = this.rows;
+        result.cols = this.cols;
+
+        // Copy all entries from both matrices
+        new Set([...this.data.keys(), ...other.data.keys()]).forEach(key => {
+            const diff = (this.data.get(key) || 0) - (other.data.get(key) || 0);
+            if (diff !== 0) {
+                result.data.set(key, diff);
+            }
+        });
+
+        return result;
+    }
+
     multiply(other) {
         if (this.cols !== other.rows) {
             throw new Error(`Dimension mismatch: Cannot multiply ${this.rows}x${this.cols} and ${other.rows}x${other.cols}`);
@@ -140,8 +160,8 @@ function main() {
                 result = matrixA.add(matrixB);
                 break;
             case 2:
-                // Implement subtract similarly
-                throw new Error("Subtract not implemented - follow add() pattern");
+                result = matrixA.subtract(matrixB);
+                break;
             case 3:
                 result = matrixA.multiply(matrixB);
                 break;
